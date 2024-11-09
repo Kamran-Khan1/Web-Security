@@ -1,0 +1,61 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+  <div class="bg-success-subtle">
+    <div
+      class="container d-flex height justify-content-center align-items-center"
+    >
+      <main class="form-signin text-center col-sm-3">
+        <form action="/login" method="post">
+          <img
+            class="mb-4 rounded-4"
+            src="https://images.unsplash.com/photo-1723724537190-8062a9515ca8?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+            width="72"
+            height="57"
+          />
+          <h1 class="h3 mb-3 fw-normal">Please log in</h1>
+
+          <div class="form-floating mb-4">
+            <input
+              name="email"
+              type="email"
+              class="form-control"
+              id="floatingInput"
+              placeholder="name@example.com"
+            />
+            <label for="floatingInput">Email address</label>
+            <% if(locals.invalidEmali){ %>
+            <h6 class="text-danger"><%= invalidEmali %></h6>
+            <% } %>
+          </div>
+          <div class="form-floating mb-4">
+            <input
+              name="password"
+              type="password"
+              class="form-control"
+              id="floatingPassword"
+              placeholder="Password"
+            />
+            <label for="floatingPassword">Password</label>
+            <% if(locals.incorrectPass){ %>
+            <h6 class="text-danger"><%= incorrectPass %></h6>
+            <% } %>
+          </div>
+          <button class="btn btn-outline-success w-100 py-2" type="submit">
+            log in
+          </button>
+          <a
+            class="btn btn-primary w-100 py-2 mt-3"
+            href="/auth/google"
+            role="button"
+            >Log in with google</a
+          >
+          <p class="mt-5 mb-3 text-body">© 2017–2024</p>
+        </form>
+      </main>
+    </div>
+  </div>
+
+  <%- include("partials/footer.ejs") %>
+</body>

@@ -1,0 +1,34 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+  <div class="bg-dark">
+    <div
+      class="container height d-flex justify-content-center align-items-center"
+    >
+      <div class="card col-sm-6 bg-success-subtle">
+        <div class="card-header text-white text-center fs-5 bg-success">
+          Secrets
+        </div>
+        <div class="card-body text-center">
+          <h5 class="card-title fs-2 text-success">
+            Hello There You Want To Know My Secret
+          </h5>
+          <p class="card-text fs-5 text-body-secondary">
+            দেখ ভাই নিজ দায়িত্বে দেখ! আমি জানি না কি আছে 😶
+          </p>
+          <% if(username){%>
+          <div class="alert alert-info" role="alert">
+            <h4>Welcome! <%= username %></h4>
+          </div>
+          <a href="/secrets" class="btn btn-warning">secrets</a>
+          <% }else{%>
+          <a href="/login" class="btn btn-success">log In</a>
+          <a href="/register" class="btn btn-outline-success">Register</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<%- include("partials/footer.ejs") %>
